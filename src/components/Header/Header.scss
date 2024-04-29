@@ -1,0 +1,71 @@
+
+
+.header {
+  background-image: url(../../images/HeaderBCG.png);
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  height: 80px;
+  padding: 20px 20px;
+  box-sizing: border-box;
+
+  @media (min-width: 430px) {
+    padding: 20px 40px;
+  }
+
+  &__content {
+    max-width: 528px;
+    margin: 0 auto;
+
+    &--icons {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__arrowButton {
+    background-image: url(../../images/back.svg);
+  }
+
+  &__progressBar {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    margin-top: 10px;
+
+    &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 33%;
+    background: linear-gradient(to left, #4AD6BB, #38A58F);
+    border-radius: 10px;
+    }
+  }
+}
+
+.icon {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s;
+
+  &--menu {
+    background-image: url(../../images/menu.svg);
+  }
+
+  &--percent {
+    align-items: center;
+    line-height: 20px;
+  }
+}
