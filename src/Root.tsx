@@ -11,8 +11,8 @@ export const Root: React.FC = () => (
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<FirstPage />} />
-        <Route index element={<SecondPage />} />
-        <Route index element={<ThirdPage />} />
+        <Route path="second_page" element={<SecondPage />} />
+        <Route path="third_page" element={<ThirdPage />} />
       </Route>
 
       <Route path="*" element={<NotFoundPage />} />
