@@ -11,7 +11,6 @@ type Props = {
 }
 
 export const ChoiseBox: React.FC<Props> = ({ id, url, text, checkedId, handleChecked }) => {
-
   return (
     <div className={classNames('choiseBox', { 'choiseBox--active': id === checkedId })}>
       <div className="choiseBox__content">

@@ -7,7 +7,7 @@ import actionLogo from '../../images/action.png';
 import thrillerLogo from '../../images/thriller.png';
 import scienceLogo from '../../images/science.png';
 import classNames from "classnames";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const boxes = [
   {
@@ -39,12 +39,27 @@ const boxes = [
 export const FirstPage: React.FC = () => {
   const [checkedId, setCheckedId] = useState<number | null>(null);
   const isDisabled = checkedId === null ? true : false;
+  const localData = JSON.parse(localStorage.getItem('selectedItem') as string);
 
+  const choiseIsFound = boxes.findIndex((box) => box.text === localData);
+
+  useEffect(() => {
+    if (choiseIsFound >= 0) {
+      setCheckedId(choiseIsFound)
+    }
+  }, [])
+  
   const isChosen = () => {
-    if (checkedId) {
+    if (checkedId !== null) {
       return boxes.find((box, index) => index === checkedId)?.text
     }
   }
+
+  const navigate = useNavigate();
+
+  const goToNewRoute = () => {
+    navigate('/page=2');
+  };
 
   return (
     <div className="firstPage">
@@ -64,19 +79,19 @@ export const FirstPage: React.FC = () => {
       </div>
 
       <div className="button">
-        <NavLink to="/second_page" className="button__link">
           <button 
             type="button" 
             className={classNames("button__text", {'button__text--active': !isDisabled})}
             disabled={isDisabled}
             onClick={() => {
               localStorage.setItem('selectedItem', JSON.stringify(isChosen()))
+              goToNewRoute();
             }}
           >
             Continue
           </button>
-        </NavLink>
       </div>
     </div>
   );
 };
+
