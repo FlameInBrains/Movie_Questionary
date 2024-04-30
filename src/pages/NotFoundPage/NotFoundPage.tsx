@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './NotFoundPage.scss';
 import { useNavigate } from 'react-router-dom';
 import { PageContext } from '../../components/PageContext.tsx';
@@ -10,11 +10,6 @@ export const NotFoundPage = () => {
   const handleBackHomeBtn = () => {
     navigate('/');
   };
-
-  // useEffect(() => {
-  //   setCurrentPage(1);
-  //   localStorage.setItem('currentPage', JSON.stringify('1'));
-  // }, [])
 
   return (
     <div className='body'>

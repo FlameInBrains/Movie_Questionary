@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   margin: 50px auto;
-  padding: 0 20px;
   height: 56px;
 
   &__text--complete {
@@ -27,6 +26,10 @@
         background-color: #fff;
         border: 2px solid #40BCA3;
       }
+    }
+
+    &__last {
+      padding: 0 20px;
     }
 
     @media (min-width: 768px) {

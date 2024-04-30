@@ -55,6 +55,14 @@
     background: linear-gradient(to left, #4AD6BB, #38A58F);
     border-radius: 10px;
     }
+
+    &--sixty::before {
+      width: 66%;
+    }
+
+    &--full::before {
+      width: 100%;
+    }
   }
 }
 

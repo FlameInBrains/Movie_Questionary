@@ -63,7 +63,7 @@ export const SecondPage: React.FC = () => {
             <div className="control">
               <label className="label" htmlFor='movie_title'>
               </label>
-
+              
               <input
                 type="text"
                 id='movie_title'
@@ -76,9 +76,8 @@ export const SecondPage: React.FC = () => {
 
             <p className={classNames("error_text", {'error_text--active' : isError})}> A correct movie title is required</p>
           </div>
-        </div>
 
-        <div className="button">
+          <div className="button">
             <button
               type="submit"
               className={classNames("button__text", { 'button__text--active': query })}
@@ -89,6 +88,7 @@ export const SecondPage: React.FC = () => {
             >
               Continue
             </button>
+        </div>
         </div>
       </form>
     </>

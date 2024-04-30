@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
-        <div className="header__progressBar"></div>
+        <div className={classNames("header__progressBar", {'header__progressBar--sixty' : currentPercent === '66', 'header__progressBar--full': currentPercent === '100'})}></div>
       </div>
     </div>
     </>

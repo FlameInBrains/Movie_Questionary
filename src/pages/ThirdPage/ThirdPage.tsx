@@ -34,7 +34,7 @@ export const ThirdPage: React.FC = () => {
         )}
       </div>
 
-      <div className="button">
+      <div className="button button__last">
         <button
           type="button"
           className="button__text--complete"
