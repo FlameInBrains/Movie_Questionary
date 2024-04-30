@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './NotFoundPage.scss';
 import { useNavigate } from 'react-router-dom';
+import { PageContext } from '../../components/PageContext.tsx';
 
 export const NotFoundPage = () => {
+  const { setCurrentPage } = useContext(PageContext);
   const navigate = useNavigate();
 
   const handleBackHomeBtn = () => {
     navigate('/');
   };
+
+  // useEffect(() => {
+  //   setCurrentPage(1);
+  //   localStorage.setItem('currentPage', JSON.stringify('1'));
+  // }, [])
 
   return (
     <div className='body'>
@@ -18,7 +25,12 @@ export const NotFoundPage = () => {
       </div>
 
       <div className='back-home'>
-        <button onClick={handleBackHomeBtn} className='back-home-btn'>
+        <button 
+          onClick={() => {
+            handleBackHomeBtn();
+            localStorage.setItem('currentPage', JSON.stringify('1'))
+          }} 
+          className='back-home-btn'>
           Back Home
         </button>
       </div>

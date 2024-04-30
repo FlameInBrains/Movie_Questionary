@@ -5,18 +5,23 @@ import { PageContext } from "../PageContext.tsx";
 import { useNavigate } from "react-router";
 
 export const Header: React.FC = () => {
-  const {currentPage, setCurrentPage} = useContext(PageContext)
-  console.log(currentPage);
+  const { currentPercent, currentPage, setCurrentPage, setCurrentPercent } = useContext(PageContext);
 
   const navigate = useNavigate();
 
   const handleCLick = () => {
     if (currentPage === 3) {
+      localStorage.setItem('currentPage', JSON.stringify('2'));
+      localStorage.setItem('currentPercent', JSON.stringify('66'));
+      setCurrentPercent('66');
       setCurrentPage(2);
-      navigate('/page=2')
+      navigate('/secondPage')
     }
 
     if (currentPage === 2) {
+      localStorage.setItem('currentPage', JSON.stringify('1'));
+      localStorage.setItem('currentPercent', JSON.stringify('33'));
+      setCurrentPercent('33');
       setCurrentPage(1);
       navigate('/')
     }
@@ -30,7 +35,7 @@ export const Header: React.FC = () => {
           <div onClick={handleCLick} className={classNames("icon header__arrowButton", {'header__arrowButton--active' : currentPage > 1})}></div>
 
           <div className="header__icons">
-            <div className="icon icon--percent"> 10% </div>
+            <div className="icon icon--percent"> {currentPercent}% </div>
 
             <div className="icon icon--menu">
             </div>

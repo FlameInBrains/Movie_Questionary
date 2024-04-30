@@ -41,7 +41,7 @@ export const FirstPage: React.FC = () => {
   const [checkedId, setCheckedId] = useState<number | null>(null);
   const isDisabled = checkedId === null ? true : false;
   const localData = JSON.parse(localStorage.getItem('selectedItem') as string);
-  const {setCurrentPage} = useContext(PageContext)
+  const { setCurrentPage, setCurrentPercent } = useContext(PageContext);
 
   const choiseIsFound = boxes.findIndex((box) => box.text === localData);
 
@@ -49,6 +49,11 @@ export const FirstPage: React.FC = () => {
     if (choiseIsFound >= 0) {
       setCheckedId(choiseIsFound)
     }
+
+    localStorage.setItem('currentPage', JSON.stringify('1'))
+    localStorage.setItem('currentPercent', JSON.stringify('33'));
+    setCurrentPercent('33');
+    setCurrentPage(1);
   }, [])
   
   const isChosen = () => {
@@ -60,7 +65,7 @@ export const FirstPage: React.FC = () => {
   const navigate = useNavigate();
 
   const goToNewRoute = () => {
-    navigate('/page=2');
+    navigate('/secondPage');
   };
 
   return (
@@ -88,7 +93,6 @@ export const FirstPage: React.FC = () => {
             onClick={() => {
               localStorage.setItem('selectedItem', JSON.stringify(isChosen()))
               goToNewRoute();
-              setCurrentPage(2);
             }}
           >
             Continue

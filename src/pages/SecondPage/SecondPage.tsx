@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './SecondPage.scss';
 import classNames from "classnames";
 import { useNavigate } from 'react-router-dom';
 import { PageContext } from "../../components/PageContext.tsx";
 
 export const SecondPage: React.FC = () => {
-  const {setCurrentPage} = useContext(PageContext)
+  const { setCurrentPage, setCurrentPercent } = useContext(PageContext);
   const [isError, setError] = useState(false);
   const [query, setQuery] = useState('');
   const symbols = ['@', '#', '$', '%', '^', '&', '*', '~'];
@@ -26,7 +26,7 @@ export const SecondPage: React.FC = () => {
   const navigate = useNavigate();
 
   const goToNewRoute = () => {
-    navigate('/page=3');
+    navigate('/thirdPage');
   };
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -44,6 +44,13 @@ export const SecondPage: React.FC = () => {
     setQuery(event.target.value);
     setError(false);
   }
+
+  useEffect(() => {
+    localStorage.setItem('currentPage', JSON.stringify('2'));
+    localStorage.setItem('currentPercent', JSON.stringify('66'));
+    setCurrentPercent('66');
+    setCurrentPage(2);
+  }, [])
 
   return (
     <>
@@ -76,7 +83,6 @@ export const SecondPage: React.FC = () => {
               type="submit"
               className={classNames("button__text", { 'button__text--active': query })}
               onClick={(event) => {
-                setCurrentPage(3);
                 handleSubmit(event);
               }}
               disabled={isDisabled}
