@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './SecondPage.scss';
 import classNames from "classnames";
 import { useNavigate } from 'react-router-dom';
+import { PageContext } from "../../components/PageContext.tsx";
 
 export const SecondPage: React.FC = () => {
+  const {setCurrentPage} = useContext(PageContext)
   const [title, setTitle] = useState('');
   const isDisabled = title ? false : true;
   const [isError, setError] = useState(false);
@@ -21,7 +23,11 @@ export const SecondPage: React.FC = () => {
       return false
   }
 
-  console.log(isValid(query));
+  const navigate = useNavigate();
+
+  const goToNewRoute = () => {
+    navigate('/page=3');
+  };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -30,18 +36,14 @@ export const SecondPage: React.FC = () => {
       setError(true);
       return;
     }
+
+    goToNewRoute();
   }
 
   const handleQueryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
     setError(false);
   }
-
-  const navigate = useNavigate();
-
-  const goToNewRoute = () => {
-    navigate('/page=3');
-  };
 
   return (
     <>
@@ -65,9 +67,7 @@ export const SecondPage: React.FC = () => {
               />
             </div>
 
-            {isError && (
-              <p className="error_text"> A correct movie title is required</p>
-            )}
+            <p className={classNames("error_text", {'error_text--active' : isError})}> A correct movie title is required</p>
           </div>
         </div>
 
@@ -75,7 +75,10 @@ export const SecondPage: React.FC = () => {
             <button
               type="submit"
               className={classNames("button__text", { 'button__text--active': query })}
-              onClick={goToNewRoute}
+              onClick={(event) => {
+                setCurrentPage(3);
+                handleSubmit(event);
+              }}
             >
               Continue
             </button>

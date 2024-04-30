@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './FirstPage.scss';
 import { ChoiseBox } from "../../components/ChoiseBoxes/ChoiseBox.tsx";
 import dramaLogo from '../../images/drama.png';
@@ -8,6 +8,7 @@ import thrillerLogo from '../../images/thriller.png';
 import scienceLogo from '../../images/science.png';
 import classNames from "classnames";
 import { NavLink, useNavigate } from "react-router-dom";
+import { PageContext } from "../../components/PageContext.tsx";
 
 const boxes = [
   {
@@ -40,6 +41,7 @@ export const FirstPage: React.FC = () => {
   const [checkedId, setCheckedId] = useState<number | null>(null);
   const isDisabled = checkedId === null ? true : false;
   const localData = JSON.parse(localStorage.getItem('selectedItem') as string);
+  const {setCurrentPage} = useContext(PageContext)
 
   const choiseIsFound = boxes.findIndex((box) => box.text === localData);
 
@@ -86,6 +88,7 @@ export const FirstPage: React.FC = () => {
             onClick={() => {
               localStorage.setItem('selectedItem', JSON.stringify(isChosen()))
               goToNewRoute();
+              setCurrentPage(2);
             }}
           >
             Continue

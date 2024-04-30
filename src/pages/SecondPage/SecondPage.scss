@@ -86,5 +86,9 @@
 }
 
 .error_text {
-  color: #DC0000;
+  color: #fff;
+
+  &--active {
+    color: #DC0000;
+  }
 }

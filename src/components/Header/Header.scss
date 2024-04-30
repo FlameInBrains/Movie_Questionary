@@ -31,6 +31,10 @@
 
   &__arrowButton {
     background-image: url(../../images/back.svg);
+
+    &--active {
+      background-image: url(../../images/back_active.svg);
+    }
   }
 
   &__progressBar {
