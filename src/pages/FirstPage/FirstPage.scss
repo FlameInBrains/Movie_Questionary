@@ -29,14 +29,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-
-  &__link {
-    text-decoration: none;
-    max-width: 528px;
-    width: 100%;
-    height: 56px;
-  }
+  margin: 20px auto;
+  max-width: 528px;
+  height: 56px;
 
   &__text {
     box-sizing: border-box;

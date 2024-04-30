@@ -6,11 +6,11 @@ import { PageContext } from "../../components/PageContext.tsx";
 
 export const SecondPage: React.FC = () => {
   const {setCurrentPage} = useContext(PageContext)
-  const [title, setTitle] = useState('');
-  const isDisabled = title ? false : true;
   const [isError, setError] = useState(false);
   const [query, setQuery] = useState('');
   const symbols = ['@', '#', '$', '%', '^', '&', '*', '~'];
+
+  const isDisabled = query ? false : true;
 
   const isValid = (query) => {
     if (query.split('').filter((char) => typeof(char) === 'string').length >= 2 
@@ -79,6 +79,7 @@ export const SecondPage: React.FC = () => {
                 setCurrentPage(3);
                 handleSubmit(event);
               }}
+              disabled={isDisabled}
             >
               Continue
             </button>

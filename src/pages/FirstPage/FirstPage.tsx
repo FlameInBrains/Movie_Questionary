@@ -7,7 +7,7 @@ import actionLogo from '../../images/action.png';
 import thrillerLogo from '../../images/thriller.png';
 import scienceLogo from '../../images/science.png';
 import classNames from "classnames";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { PageContext } from "../../components/PageContext.tsx";
 
 const boxes = [

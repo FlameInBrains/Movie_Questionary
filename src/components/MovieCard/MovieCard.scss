@@ -1,0 +1,58 @@
+.movie-card {
+  box-sizing: border-box;
+  position: relative;
+  max-width: 528px;
+  height: 100%;
+  border-radius: 8px;
+  border: 0.5px #fff solid;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto 0;
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    height: 320px;
+    max-width: 428px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      padding: 80px 20px 0;
+      height: 400px;
+    }
+  }
+
+  &__image {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    border-radius: 16px;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #212121;
+  }
+
+  &__year {
+    text-align: center;
+    color: #212121;
+  }
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 25px 0 10px;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+  }
+}
+
+
