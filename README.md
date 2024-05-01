@@ -7,9 +7,9 @@ Hello! Here is the description of this project:
 
 2) On the second step you need to enter the movie title you want to check. The form will validate your title and let you know if the title is valid:
 
- ![image](https://github.com/FlameInBrains/Movie_Questionary/assets/134690495/37fe7fdc-3d18-4418-9900-2cab3799096d)
+   ![image](https://github.com/FlameInBrains/Movie_Questionary/assets/134690495/37fe7fdc-3d18-4418-9900-2cab3799096d)
 
- ![image](https://github.com/FlameInBrains/Movie_Questionary/assets/134690495/e13b6d90-cf83-47c9-95d4-da3d6f179055)
+   ![image](https://github.com/FlameInBrains/Movie_Questionary/assets/134690495/e13b6d90-cf83-47c9-95d4-da3d6f179055)
 
 
 3) When you correctly enter your movie title, you will receive a list of movies that have entered title in their title, for example 'Batman':
@@ -22,9 +22,9 @@ Hello! Here is the description of this project:
 
    ![image](https://github.com/FlameInBrains/Movie_Questionary/assets/134690495/1be460dc-5030-4730-a59a-a64da30853c2)
 
-  Also, you can go page to the second page via this icon to reenter your title:
+   Also, you can go page to the second page via this icon to reenter your title:
 
-  ![image](https://github.com/FlameInBrains/Movie_Questionary/assets/134690495/196db841-9fc3-4ac4-add5-47700f4ae88d)
+   ![image](https://github.com/FlameInBrains/Movie_Questionary/assets/134690495/196db841-9fc3-4ac4-add5-47700f4ae88d)
 
 5) The last but not the least function is the 'notFoundPage'. If you type something that has no means if the URL, you will travel to this space:
 
