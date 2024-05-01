@@ -7,7 +7,9 @@
   border: 0.5px #fff solid;
   display: flex;
   flex-direction: column;
-  margin: 20px auto 0;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border: 1px solid #D7DCDF;
 
   &__image-container {
     display: flex;
@@ -15,6 +17,7 @@
     height: 320px;
     max-width: 428px;
     margin: 0 auto;
+    overflow: hidden;
 
     @media (min-width: 768px) {
       padding: 80px 20px 0;
@@ -31,12 +34,13 @@
   }
 
   &__title {
-    width: 100%;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #212121;
+    word-wrap: break-word;
+    white-space: pre-line;
   }
 
   &__year {
@@ -48,7 +52,7 @@
 .card-title {
   font-size: 24px;
   font-weight: 900;
-  margin: 25px 0 10px;
+  margin: 25px 10px 10px;
 
   @media (min-width: 768px) {
     font-size: 32px;

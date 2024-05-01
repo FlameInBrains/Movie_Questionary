@@ -30,9 +30,15 @@
 
     &__last {
       padding: 0 20px;
+      position: initial;
     }
 
     @media (min-width: 768px) {
       margin-top: 150px;
     }
+}
+
+.loading {
+  text-align: center;
+  margin-top: 100px;
 }

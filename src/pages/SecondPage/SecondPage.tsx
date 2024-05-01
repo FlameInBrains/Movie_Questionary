@@ -63,7 +63,7 @@ export const SecondPage: React.FC = () => {
             <div className="control">
               <label className="label" htmlFor='movie_title'>
               </label>
-              
+
               <input
                 type="text"
                 id='movie_title'
@@ -83,6 +83,7 @@ export const SecondPage: React.FC = () => {
               className={classNames("button__text", { 'button__text--active': query })}
               onClick={(event) => {
                 handleSubmit(event);
+                localStorage.setItem('query', JSON.stringify({query}));
               }}
               disabled={isDisabled}
             >

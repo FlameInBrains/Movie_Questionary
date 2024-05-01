@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 200px auto;
+  margin: 50px auto;
   height: 56px;
 
   &__text {
@@ -49,8 +49,8 @@
     }
   }
 
-  @media (min-width: 768px) {
-    margin-top: 150px;
+  @media (min-width: 400px) {
+    margin-top: 200px;
   }
 }
 

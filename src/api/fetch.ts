@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const apiKey = '853bb38b';
 
-const movieEndpoint = params => `https://www.omdbapi.com/?s=${params}&apikey=${apiKey}`;
+const movieEndpoint = params => `https://www.omdbapi.com/?s=${params.query}&apikey=${apiKey}`;
 
 const apiCall = async (endpoint) => {
   const options = {
