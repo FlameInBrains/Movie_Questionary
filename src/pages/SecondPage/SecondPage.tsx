@@ -10,8 +10,6 @@ export const SecondPage: React.FC = () => {
   const [query, setQuery] = useState('');
   const symbols = ['@', '#', '$', '%', '^', '&', '*', '~'];
 
-  const isDisabled = query ? false : true;
-
   const isValid = (query) => {
     if (query.split('').filter((char) => typeof(char) === 'string').length >= 2 
         && query.split('').filter((char) => parseInt(char) >= 0 && parseInt(char) <= 9).length <= 4 
@@ -22,6 +20,10 @@ export const SecondPage: React.FC = () => {
 
       return false
   }
+
+  const isDisabled = query ? false : true;
+
+  console.log(isDisabled)
 
   const navigate = useNavigate();
 
@@ -80,7 +82,7 @@ export const SecondPage: React.FC = () => {
           <div className="button">
             <button
               type="submit"
-              className={classNames("button__text", { 'button__text--active': query })}
+              className={classNames("button__text", { 'button__text--active': query && !isError})}
               onClick={(event) => {
                 handleSubmit(event);
                 localStorage.setItem('query', JSON.stringify({query}));
