@@ -1,5 +1,8 @@
 
-Hello! Here is the description of this project:
+   Hello! Here is the description of this project:
+
+
+
 
 1) On the first step you can choose your favorite genre of movies. After clicking on the 'Continue' button your choice will be saved to the local storage.
    
