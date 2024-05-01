@@ -11,7 +11,9 @@ const apiCall = async (endpoint) => {
   }
   try {
     const response = await axios.request(options);
-    return response.data;
+    if (response.data.Response !== 'False') {
+      return response.data;
+    }
   } catch(err) {
     console.log('Something went wrong', err);
     return null;

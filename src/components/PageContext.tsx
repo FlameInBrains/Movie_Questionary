@@ -18,7 +18,6 @@ export const PageProvider: React.FC<Props> = ({ children }) => {
   const localPercent = JSON.parse(localStorage.getItem('currentPercent') as string)
   const [currentPage, setCurrentPage] = useState(1);
   const [currentPercent, setCurrentPercent] = useState('33')
-  console.log(localPage);
 
   useEffect(() => {
     if (localPage !== 1) {
@@ -31,8 +30,6 @@ export const PageProvider: React.FC<Props> = ({ children }) => {
       setCurrentPercent(localPercent);
     }
   }, [currentPage])
-
-  console.log(currentPercent);
 
   const contextValues: ContextValues = useMemo(
     () => ({
