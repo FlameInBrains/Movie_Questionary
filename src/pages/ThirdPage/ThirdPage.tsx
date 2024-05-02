@@ -80,7 +80,10 @@ export const ThirdPage: React.FC = () => {
                   <button
                     type="button"
                     className="button__text--complete"
-                    onClick={goToNewRoute}
+                    onClick={() => {
+                      goToNewRoute();
+                      localStorage.setItem('selectedItem', JSON.stringify(''))
+                    }}
                   >
                     Complete
                   </button>
